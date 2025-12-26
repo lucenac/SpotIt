@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:15
+    container_name: spotit_db_pg
+    restart: always
+    # Essa linha garante que o container leia o arquivo .env
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
