@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --border: #e5e7eb;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --border: #1e293b;
+  background: #0f172a;
+  color: #f8fafc;
+}
+ body.dark {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Header */
+body.dark .header {
+  background-color: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Explorer e MyItems */
+body.dark .explorer {
+  background-color: #0f172a;
+}
+
+/* Cards */
+body.dark .bg-white {
+  background-color: #020617 !important;
+  color: #e5e7eb;
+}
+
+/* Inputs */
+body.dark input {
+  background-color: #020617;
+  color: #e5e7eb;
+  border-color: #334155;
+}

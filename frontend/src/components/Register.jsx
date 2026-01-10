@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Register = ({ onToggle }) => {
+const Register = () => {
   const [formData, setFormData] = useState({
     nomeCompleto: "",
     email: "",
@@ -18,17 +19,19 @@ const Register = ({ onToggle }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (formData.senha !== formData.confirmaSenha) {
       alert("Senhas não coincidem");
       return;
     }
+
     console.log("Register:", formData);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-600 flex flex-col items-center justify-center p-4 relative">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-600 flex flex-col items-center justify-center p-4">
       {/* Card */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl px-8 py-6 w-full max-w-md border border-white/50">
+      <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl px-8 py-6 w-full max-w-md">
         <div className="text-center mb-4">
           <h1 className="text-2xl font-bold text-gray-900">Cadastrar</h1>
           <p className="text-gray-600 text-sm mt-1">
@@ -43,7 +46,7 @@ const Register = ({ onToggle }) => {
             placeholder="Nome completo"
             value={formData.nomeCompleto}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl"
             required
           />
 
@@ -53,7 +56,7 @@ const Register = ({ onToggle }) => {
             placeholder="E-mail"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl"
             required
           />
 
@@ -69,7 +72,7 @@ const Register = ({ onToggle }) => {
               placeholder="(DD) 90000-0000"
               value={formData.telefone}
               onChange={handleChange}
-              className="flex-1 p-3 border border-gray-300 rounded-r-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 p-3 border border-gray-300 rounded-r-xl"
               required
             />
           </div>
@@ -80,7 +83,7 @@ const Register = ({ onToggle }) => {
             placeholder="Senha"
             value={formData.senha}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl"
             required
           />
 
@@ -90,26 +93,26 @@ const Register = ({ onToggle }) => {
             placeholder="Confirmar senha"
             value={formData.confirmaSenha}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl"
             required
           />
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-3 rounded-xl font-semibold hover:bg-blue-600 transition"
+            className="w-full bg-blue-500 text-white p-3 rounded-xl font-semibold hover:bg-blue-600"
           >
             Cadastrar
           </button>
         </form>
       </div>
 
-      {/* Link fora do card */}
-      <button
-        onClick={onToggle}
+      {/* LINK CORRETO */}
+      <Link
+        to="/"
         className="mt-6 text-white text-sm hover:underline"
       >
         ← Voltar para a página inicial
-      </button>
+      </Link>
     </div>
   );
 };
