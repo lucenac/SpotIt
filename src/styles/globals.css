@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Definição de cores do design system */
+@theme {
+  /* Light mode colors */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f172a;
+  --color-primary: #2563eb;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #f1f5f9;
+  --color-accent-foreground: #0f172a;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-input-background: #ffffff;
+  --color-ring: #2563eb;
+  
+  /* Dark mode colors */
+  --color-dark-background: #0f172a;
+  --color-dark-foreground: #f1f5f9;
+  --color-dark-card: #1e293b;
+  --color-dark-card-foreground: #f1f5f9;
+  --color-dark-popover: #1e293b;
+  --color-dark-popover-foreground: #f1f5f9;
+  --color-dark-primary: #3b82f6;
+  --color-dark-primary-foreground: #ffffff;
+  --color-dark-secondary: #1e293b;
+  --color-dark-secondary-foreground: #f1f5f9;
+  --color-dark-muted: #1e293b;
+  --color-dark-muted-foreground: #94a3b8;
+  --color-dark-accent: #1e293b;
+  --color-dark-accent-foreground: #f1f5f9;
+  --color-dark-destructive: #dc2626;
+  --color-dark-destructive-foreground: #ffffff;
+  --color-dark-border: #334155;
+  --color-dark-input: #334155;
+  --color-dark-input-background: #1e293b;
+  --color-dark-ring: #3b82f6;
+}
+
+/* Aplicar cores no root */
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
+  --card: var(--color-card);
+  --card-foreground: var(--color-card-foreground);
+  --popover: var(--color-popover);
+  --popover-foreground: var(--color-popover-foreground);
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-primary-foreground);
+  --secondary: var(--color-secondary);
+  --secondary-foreground: var(--color-secondary-foreground);
+  --muted: var(--color-muted);
+  --muted-foreground: var(--color-muted-foreground);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-accent-foreground);
+  --destructive: var(--color-destructive);
+  --destructive-foreground: var(--color-destructive-foreground);
+  --border: var(--color-border);
+  --input: var(--color-input);
+  --input-background: var(--color-input-background);
+  --ring: var(--color-ring);
+}
+
+.dark {
+  --background: var(--color-dark-background);
+  --foreground: var(--color-dark-foreground);
+  --card: var(--color-dark-card);
+  --card-foreground: var(--color-dark-card-foreground);
+  --popover: var(--color-dark-popover);
+  --popover-foreground: var(--color-dark-popover-foreground);
+  --primary: var(--color-dark-primary);
+  --primary-foreground: var(--color-dark-primary-foreground);
+  --secondary: var(--color-dark-secondary);
+  --secondary-foreground: var(--color-dark-secondary-foreground);
+  --muted: var(--color-dark-muted);
+  --muted-foreground: var(--color-dark-muted-foreground);
+  --accent: var(--color-dark-accent);
+  --accent-foreground: var(--color-dark-accent-foreground);
+  --destructive: var(--color-dark-destructive);
+  --destructive-foreground: var(--color-dark-destructive-foreground);
+  --border: var(--color-dark-border);
+  --input: var(--color-dark-input);
+  --input-background: var(--color-dark-input-background);
+  --ring: var(--color-dark-ring);
+}
