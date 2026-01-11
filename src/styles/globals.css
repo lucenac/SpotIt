@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* Definição de cores do design system */
 @theme {
-  /* Light mode colors */
   --color-background: #ffffff;
   --color-foreground: #0f172a;
   --color-card: #ffffff;
@@ -24,7 +22,6 @@
   --color-input-background: #ffffff;
   --color-ring: #2563eb;
   
-  /* Dark mode colors */
   --color-dark-background: #0f172a;
   --color-dark-foreground: #f1f5f9;
   --color-dark-card: #1e293b;
@@ -47,7 +44,6 @@
   --color-dark-ring: #3b82f6;
 }
 
-/* Aplicar cores no root */
 :root {
   --background: var(--color-background);
   --foreground: var(--color-foreground);

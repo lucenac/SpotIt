@@ -72,48 +72,47 @@ export interface UpdateItemDTO {
 }
 
 class ItemService {
-  // GET /api/items - Listar todos os itens com filtros
+  // GET /api/items
   async getItems(params?: SearchParams): Promise<{ items: Item[]; total: number }> {
     const response = await api.get('/items/', { params });
     return response.data;
   }
 
-  // GET /api/items/:id - Buscar item por ID
+  // GET /api/items/:id
   async getItemById(id: string): Promise<Item> {
     const response = await api.get(`/items/${id}/`);
     return response.data;
   }
 
-  // POST /api/items - Criar novo item
+  // POST /api/items
   async createItem(data: CreateItemDTO): Promise<Item> {
     const response = await api.post('/items/', data);
     return response.data;
   }
 
-  // PUT /api/items/:id - Atualizar item
+  // PUT /api/items/:id
   async updateItem(id: string, data: Partial<CreateItemDTO>): Promise<Item> {
     const response = await api.put(`/items/${id}/`, data);
     return response.data;
   }
 
-  // DELETE /api/items/:id - Deletar item
+  // DELETE /api/items/:id
   async deleteItem(id: string): Promise<void> {
     await api.delete(`/items/${id}/`);
   }
 
-  // PATCH /api/items/:id/status - Marcar item como resolvido
+  // PATCH /api/items/:id
   async markAsResolved(id: string, data: UpdateStatusDTO): Promise<Item> {
     const response = await api.patch(`/items/${id}/`, data);
     return response.data;
   }
 
-  // GET /api/items/my-items - Buscar itens do usuário logado
+  // GET /api/items/my-items
   async getMyItems(): Promise<Item[]> {
     const response = await api.get('/items/', { params: { mine: 1 } });
     return response.data.items || response.data;
   }
 
-  // Buscar categorias disponíveis
   async getCategories(): Promise<string[]> {
     return ['Carteira', 'Eletrônicos', 'Chaves', 'Animal de Estimação', 'Bolsa/Mochila', 'Joia/Relógio', 'Acessório'];
   }

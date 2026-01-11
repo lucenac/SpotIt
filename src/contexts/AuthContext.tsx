@@ -49,10 +49,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const response = await authAPI.login(email, password);
       const { token } = response;
 
-      // 1. Salvar token
       sessionStorage.setItem('authToken', token);
 
-      // 2. Buscar usuário (O Interceptor agora vai pegar o token que acabamos de salvar)
       const userData = await authAPI.getCurrentUser();
       
       const loggedUser: User = {

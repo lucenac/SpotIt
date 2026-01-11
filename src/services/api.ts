@@ -24,7 +24,6 @@ api.interceptors.request.use((config) => {
 export const authAPI = {
   login: async (email: string, password: string) => {
     const response = await api.post('/auth/token/', { email, password });
-    // REMOVI o localStorage.setItem daqui. O Context que cuida disso.
     return response.data;
   },
 
@@ -42,6 +41,4 @@ export const authAPI = {
     const response = await api.get('/usuarios/me/');
     return response.data;
   },
-  
-  // O logout também não precisa estar aqui, o Context resolve
 };

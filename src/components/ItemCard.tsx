@@ -8,11 +8,9 @@ import { toast } from 'sonner';
 interface ItemCardProps {
   item: Item;
   showActions?: boolean;
-  // ADICIONADO: Precisamos tipar a função onDelete
   onDelete?: (id: string) => void;
 }
 
-// ADICIONADO: Recebendo onDelete nas props
 export function ItemCard({ item, showActions = false, onDelete }: ItemCardProps) {
   
   const navigate = useNavigate();
@@ -20,14 +18,13 @@ export function ItemCard({ item, showActions = false, onDelete }: ItemCardProps)
   const userString = sessionStorage.getItem('user');
   const currentUser = userString ? JSON.parse(userString) : null;
   
-  // Lógica de mostrar ações: Se o showActions veio true da props OU se é o dono
   const canEdit = showActions || (currentUser && (currentUser.id === item.user_id || currentUser.email === item.contact_email));
 
   // Função de Editar
   const handleEdit = (e: React.MouseEvent) => {
-    e.preventDefault(); // Garante que não navegue pelo Link
+    e.preventDefault();
     e.stopPropagation(); 
-    navigate(`/edit/${item.id}`); // Ajuste a rota conforme seu Router (ex: /items/edit/...)
+    navigate(`/edit/${item.id}`); 
   };
 
   // Função de Deletar
@@ -54,8 +51,6 @@ export function ItemCard({ item, showActions = false, onDelete }: ItemCardProps)
     }
   };
 
-  // MUDANÇA IMPORTANTE: Troquei <> por uma <div> com classes de Card.
-  // Isso garante que os botões fiquem DENTRO do visual do card.
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
       <Link
@@ -119,17 +114,16 @@ export function ItemCard({ item, showActions = false, onDelete }: ItemCardProps)
       </Link>
 
       {/* --- BOTÕES COM ONCLICK --- */}
-      {/* Coloquei dentro da div principal, mas fora do Link, com padding */}
       {canEdit && (
         <div className="p-4 pt-0 mt-auto flex gap-2">
           <button 
-            onClick={handleEdit}  // <--- AQUI ESTAVA FALTANDO
+            onClick={handleEdit} 
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors z-10 relative"
           >
             Editar
           </button>
           <button 
-            onClick={handleDelete} // <--- AQUI ESTAVA FALTANDO
+            onClick={handleDelete}
             className="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors z-10 relative"
           >
             Deletar

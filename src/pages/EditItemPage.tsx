@@ -7,14 +7,12 @@ import { itemService } from '../services/itemService';
 import { ArrowLeft, Save, Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 
-// Reutilizando componentes UI (ajuste os imports conforme seu projeto)
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 
-// Schema de Validação (Idêntico ao de Criação)
 const editItemSchema = z.object({
   type: z.enum(['lost', 'found']),
   title: z.string().min(3, 'O título deve ter pelo menos 3 caracteres'),

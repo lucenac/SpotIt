@@ -66,7 +66,6 @@ export function UpdateStatusPage() {
       const data = await itemService.getItemById(id);
       setItem(data);
       
-      // Se o item já estiver resolvido, redirecionar
       if (data.status === 'resolved') {
         toast.error('Este item já está marcado como resolvido');
         navigate(`/items/${id}`);

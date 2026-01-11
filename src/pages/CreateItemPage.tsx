@@ -8,7 +8,6 @@ import { ArrowLeft, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-// Schema de validação com Zod
 const itemSchema = z.object({
   type: z.enum(['lost', 'found']).refine(val => val, {
     message: 'Selecione o tipo do item',
