@@ -109,7 +109,7 @@ const onSubmit = async (data: ItemFormData) => {
         <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
           {/* Type Selection */}
           <div>
-            <label className="block text-gray-700 mb-2">Tipo do Item*</label>
+            <span className="block text-gray-700 mb-2">Tipo do Item*</span>
             <div className="flex gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input

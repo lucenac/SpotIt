@@ -62,7 +62,7 @@ export function ItemForm({ onClose, onSubmit }: ItemFormProps) {
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           {/* Type Selection */}
           <div>
-            <label className="block text-gray-700 mb-2">Item Status*</label>
+            <span className="block text-gray-700 mb-2">Item Status*</span>
             <div className="flex gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input

@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-import type { Item } from '../services/itemService';
-import { itemService } from '../services/itemService'; // Importe o serviço separado do tipo
-import { MapPin, Calendar, Mail, User, Tag } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import type { Item, itemService } from '../services/itemService';
+import { MapPin, Calendar, User, Tag } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface ItemCardProps {
